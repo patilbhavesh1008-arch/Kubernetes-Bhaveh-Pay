@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bhaveshpay-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: bhaveshpay
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP

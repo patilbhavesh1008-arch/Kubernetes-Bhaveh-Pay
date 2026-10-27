@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bhaveshpay
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bhaveshpay
+  template:
+    metadata:
+      labels:
+        app: bhaveshpay
+    spec:
+      containers:
+        - name: bhaveshpay
+          image: natsucloud/bhaveshpay:latest
+          ports:
+            - containerPort: 80
